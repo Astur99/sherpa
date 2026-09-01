@@ -23,6 +23,23 @@ export const TRADER_STYLES = {
   DEFAULT: { color: '#8F9F7F', bgGradient: 'rgba(143, 159, 127, 0.06)' }
 };
 
+// Keep the established tab order, but do not hide quests when the live
+// catalogue introduces a new quest giver (for example Ref or BTR Driver).
+export const getQuestTraders = (tasks = []) => {
+  const presentTraders = new Set(
+    tasks
+      .map((task) => task?.trader?.name)
+      .filter(Boolean)
+  );
+
+  return [
+    ...TRADERS.filter((trader) => presentTraders.has(trader)),
+    ...[...presentTraders]
+      .filter((trader) => !TRADERS.includes(trader))
+      .sort((left, right) => left.localeCompare(right))
+  ];
+};
+
 export const collectorItemsList = [
   { id: '42-tea', name: '42 Signature Blend English Tea', hint: 'Food spawns, ration crates' },
   { id: 'antique-axe', name: 'Antique axe', hint: 'Scavs, safes, stashes' },

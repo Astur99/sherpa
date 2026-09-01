@@ -6,6 +6,7 @@ import {
   getCompletionTaskRequirementIds,
   MAX_QUESTS_PER_ROW
 } from '../src/modules/kappa/kappaUtils.js';
+import { getQuestTraders } from '../src/modules/kappa/kappaData.js';
 
 const requirement = (task, status) => ({ task: { id: task }, status });
 const makeTask = (id, taskRequirements = []) => ({
@@ -102,4 +103,14 @@ test('cross-trader prerequisites influence depth without drawing a misleading lo
 
   assert.ok(graph.nodos.find((node) => node.id === 'local-child').y > 0);
   assert.equal(graph.conexiones.length, 0);
+});
+
+test('quest giver tabs retain the canonical order and include live additions', () => {
+  const traders = getQuestTraders([
+    { trader: { name: 'BTR Driver' } },
+    { trader: { name: 'Prapor' } },
+    { trader: { name: 'Ref' } }
+  ]);
+
+  assert.deepEqual(traders, ['Prapor', 'BTR Driver', 'Ref']);
 });

@@ -385,13 +385,13 @@ export const HOW_TO_USE_CONTENT = {
               'Mapas ayuda a preparar rutas para quests, bosses, llaves y progresión de historia.'
           },
           {
-            title: 'Decisiones / Finales',
-            keywords: ['finales', 'story', 'decisiones', 'armored case', 'kerman', 'terminal'],
+            title: 'Modo Historia',
+            keywords: ['historia', 'capitulos', 'finales', 'story', 'decisiones', 'armored case', 'kerman', 'terminal'],
             summary:
-              'Guía de decisiones narrativas, puntos de no retorno y requisitos críticos para las rutas de historia.',
+              'Capítulos con guías verificables, decisiones narrativas, puntos de no retorno y requisitos críticos para las rutas de historia.',
             steps: [
-              'Abre Decisiones / Finales.',
-              'Lee el bloque inicial y las decisiones principales.',
+              'Abre Modo Historia y elige Capítulos o Decisiones y finales.',
+              'Abre la guía externa del capítulo que estés siguiendo.',
               'Despliega requisitos cuando una ruta lo permita.',
               'Compara consecuencias antes de comprometer objetos o dinero.'
             ],
@@ -870,13 +870,13 @@ export const HOW_TO_USE_CONTENT = {
               'Maps helps prepare routes for quests, bosses, keys and story progression.'
           },
           {
-            title: 'Decisions / Endings',
-            keywords: ['endings', 'story', 'decisions', 'armored case', 'kerman', 'terminal'],
+            title: 'Story Mode',
+            keywords: ['chapters', 'endings', 'story', 'decisions', 'armored case', 'kerman', 'terminal'],
             summary:
-              'Guide for narrative decisions, points of no return and critical requirements for story routes.',
+              'Chapters with verifiable guides, narrative decisions, points of no return and critical requirements for story routes.',
             steps: [
-              'Open Decisions / Endings.',
-              'Read the initial block and main decisions.',
+              'Open Story Mode and choose Chapters or Decisions and endings.',
+              'Open the external guide for the chapter you are following.',
               'Expand requirements where a route allows it.',
               'Compare consequences before committing items or money.'
             ],

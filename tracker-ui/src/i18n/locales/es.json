@@ -61,8 +61,8 @@
         "desc": "Organigrama global con filtrado de misiones, misiones para Kappa y checklist de completado."
       },
       "story": {
-        "title": "DECISIONES / FINALES",
-        "desc": "Puntos de no retorno y decisiones a tomar para llegar a los distintos finales."
+        "title": "MODO HISTORIA",
+        "desc": "Capítulos, guías de progreso, puntos de no retorno y decisiones para los distintos finales."
       },
       "bosses": {
         "title": "INTEL: BOSSES",
@@ -2034,8 +2034,12 @@
     }
   },
   "storyModule": {
-    "title": "DECISIONES / FINALES",
-    "subtitle": "Guía operativa de rutas, decisiones irreversibles y requisitos críticos para orientar el final de la historia de Tarkov.",
+    "title": "MODO HISTORIA",
+    "subtitle": "Capítulos, pasos de progreso y decisiones irreversibles para recorrer las rutas narrativas y sus finales.",
+    "tabs": {
+      "chapters": "CAPÍTULOS",
+      "decisions": "DECISIONES Y FINALES"
+    },
     "noReturn": "Punto de no retorno",
     "armoredCaseQuestion": "¿Qué haces con el Armored Case?",
     "kermanQuestion": "¿Trabajar con Kerman o no trabajar con Kerman?",

@@ -61,8 +61,8 @@
         "desc": "Global quest tree with mission filters, Kappa quests and completion checklist."
       },
       "story": {
-        "title": "DECISIONS / ENDINGS",
-        "desc": "Points of no return and decisions needed to reach each ending."
+        "title": "STORY MODE",
+        "desc": "Chapters, progression guides, points of no return and choices for the different endings."
       },
       "bosses": {
         "title": "INTEL: BOSSES",
@@ -2034,8 +2034,12 @@
     }
   },
   "storyModule": {
-    "title": "STORY DECISIONS",
-    "subtitle": "All routes, decisions and points of no return you should track to reach the different Tarkov story endings.",
+    "title": "STORY MODE",
+    "subtitle": "Chapters, progression steps and irreversible choices for navigating the narrative routes and their endings.",
+    "tabs": {
+      "chapters": "CHAPTERS",
+      "decisions": "DECISIONS AND ENDINGS"
+    },
     "noReturn": "Point of no return",
     "armoredCaseQuestion": "What do you do with the Armored Case?",
     "kermanQuestion": "Work with Kerman or refuse Kerman?",

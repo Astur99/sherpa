@@ -5,7 +5,7 @@ import {
   PLAYABLE_GAME_MODES
 } from '../../lib/gameModePreferences';
 import { fetchCollectorItemAssets, fetchKappaTasks } from './kappaApi';
-import { TRADERS, TRADER_STYLES, collectorItemsList } from './kappaData';
+import { getQuestTraders, TRADER_STYLES, collectorItemsList } from './kappaData';
 import {
   readActiveMode,
   readCollectorProgress,
@@ -47,6 +47,10 @@ export default function KappaTree({ onViewChange, session, initialTool = 'tree' 
   const [collectorSearch, setCollectorSearch] = useState('');
   const [collectorItemAssets, setCollectorItemAssets] = useState({});
   const modeLabel = GAME_MODE_LABELS[modoJuego] || modoJuego;
+  const questTraders = useMemo(
+    () => getQuestTraders(todasLasMisiones),
+    [todasLasMisiones]
+  );
 
   const [completadas, setCompletadas] = useState(() => readProgress(readActiveMode()));
 
@@ -332,7 +336,7 @@ export default function KappaTree({ onViewChange, session, initialTool = 'tree' 
     if (misionEncontrada?.trader?.name) {
       const traderDestino = misionEncontrada.trader.name;
 
-      if (TRADERS.includes(traderDestino) && traderDestino !== currentTrader) {
+      if (questTraders.includes(traderDestino) && traderDestino !== currentTrader) {
         setCurrentTrader(traderDestino);
       }
     }
@@ -816,7 +820,7 @@ export default function KappaTree({ onViewChange, session, initialTool = 'tree' 
               setPan(getInitialTreePan());
             }}
           >
-            {TRADERS.map((tName) => (
+            {questTraders.map((tName) => (
               <option key={tName} value={tName}>
                 {tName.toUpperCase()}
               </option>
@@ -834,7 +838,7 @@ export default function KappaTree({ onViewChange, session, initialTool = 'tree' 
             paddingBottom: '0.5rem'
           }}
         >
-          {TRADERS.map((tName) => {
+          {questTraders.map((tName) => {
             const esActivo = currentTrader === tName;
             const tStyle = TRADER_STYLES[tName] || TRADER_STYLES.DEFAULT;
 

@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import StoryChapterGuide from './StoryChapterGuide';
 
 export default function StoryDecisions({ onViewChange }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const [activeSection, setActiveSection] = useState('chapters');
   // CONTROL DE BIFURCACIONES Y DECISIONES (PASOS DE TU GUÍA)
   const [paso3Decision, setPaso3Decision] = useState(null); // null | 'quedarselo' | 'prapor'
   const [paso6Decision, setPaso6Decision] = useState(null); // null | 'no_kerman' | 'kerman'
@@ -106,6 +108,32 @@ export default function StoryDecisions({ onViewChange }) {
           {t('common.backToMenu')}
         </button>
       </header>
+
+      <nav aria-label="Modo Historia" style={{ display: 'flex', gap: '0.65rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
+        {[
+          ['chapters', t('storyModule.tabs.chapters', { defaultValue: 'CAPÍTULOS' })],
+          ['decisions', t('storyModule.tabs.decisions', { defaultValue: 'DECISIONES Y FINALES' })]
+        ].map(([section, label]) => (
+          <button
+            key={section}
+            type="button"
+            onClick={() => setActiveSection(section)}
+            style={{
+              background: activeSection === section ? 'rgba(26,176,21,0.16)' : 'rgba(255,255,255,0.02)',
+              border: `1px solid ${activeSection === section ? 'var(--tk-green)' : 'rgba(255,255,255,0.1)'}`,
+              borderRadius: '7px', color: '#fff', cursor: 'pointer', fontWeight: 800,
+              letterSpacing: '0.7px', padding: '0.7rem 1rem'
+            }}
+          >
+            {label}
+          </button>
+        ))}
+      </nav>
+
+      {activeSection === 'chapters' ? (
+        <StoryChapterGuide language={i18n.resolvedLanguage} />
+      ) : (
+        <>
 
       {/* FASE 1: CADENA COMÚN INICIAL */}
       <section style={{ display: 'flex', flexDirection: 'column', gap: '0px' }}>
@@ -494,6 +522,8 @@ export default function StoryDecisions({ onViewChange }) {
             </div>
           )}
         </section>
+      )}
+        </>
       )}
 
     </div>

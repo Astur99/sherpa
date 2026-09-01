@@ -18,6 +18,57 @@ export const VERSION_POLICY = {
 
 export const changelogEntries = [
   {
+    version: '1.6.0',
+    date: '2026-09-02',
+    codename: 'Kord Cartography',
+    type: 'feature',
+    title: {
+      es: 'KORD BREACH operativo y árbol de misiones reforzado',
+      en: 'Operational KORD BREACH and reinforced quest tree'
+    },
+    summary: {
+      es: 'La temporada KORD BREACH gana su centro operativo completo y el árbol de misiones queda preparado para los comerciantes y ramas que publique el catálogo vivo.',
+      en: 'The KORD BREACH season gains its complete operations hub and the quest tree is prepared for quest givers and branches published by the live catalogue.'
+    },
+    changes: [
+      {
+        type: 'added',
+        text: {
+          es: 'KORD BREACH incorpora modificadores, Battle Pass de 12 páginas, recompensas, documentos requeridos, seguimiento local de documentos y logros estacionales y de Arena.',
+          en: 'KORD BREACH adds modifiers, a 12-page Battle Pass, rewards, required documents, local document tracking, and Seasonal and Arena achievements.'
+        }
+      },
+      {
+        type: 'added',
+        text: {
+          es: 'El módulo integra un mapa comunitario de documentos para planificar rutas de farmeo sin salir de la aplicación.',
+          en: 'The module embeds a community document map to plan farming routes without leaving the app.'
+        }
+      },
+      {
+        type: 'added',
+        text: {
+          es: 'Decisiones / Finales pasa a llamarse Modo Historia e incorpora capítulos narrativos seleccionables con guías internas paso a paso, capturas de referencia, mapas y enlaces a sus fuentes verificables, separados de las decisiones irreversibles.',
+          en: 'Decisions / Endings is renamed Story Mode and adds selectable narrative chapters with internal step-by-step guides, reference screenshots, maps, and links to their verifiable sources, separate from irreversible decisions.'
+        }
+      },
+      {
+        type: 'changed',
+        text: {
+          es: 'El organigrama de Misiones / Kappa conserva las ramas conectadas, distribuye mejor los bloques independientes y calcula la profundidad con prerrequisitos de otros comerciantes sin dibujar enlaces engañosos.',
+          en: 'The Missions / Kappa graph keeps connected branches together, packs independent blocks more effectively, and calculates depth from cross-trader prerequisites without drawing misleading links.'
+        }
+      },
+      {
+        type: 'fixed',
+        text: {
+          es: 'Las pestañas de Misiones se generan desde el catálogo vivo: Ref y BTR Driver ya son accesibles y los nuevos comerciantes no quedarán ocultos por una lista estática.',
+          en: 'Mission tabs are generated from the live catalogue: Ref and BTR Driver are now accessible and new quest givers will not be hidden by a static list.'
+        }
+      }
+    ]
+  },
+  {
     version: '1.5.0',
     date: '2026-08-04',
     codename: 'Kord Foundation',
